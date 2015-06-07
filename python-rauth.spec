@@ -26,6 +26,7 @@ BuildRequires:	python3-modules
 BuildRequires:	python3-setuptools >= 7.0
 %endif
 Requires:	python-modules
+Requires:	python-requests >= 1.2.3
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -36,6 +37,7 @@ OAuth 1.0/a, OAuth 2.0, and Ofly library.
 Summary:	OAuth 1.0/a, OAuth 2.0, and Ofly library
 Group:		Libraries/Python
 Requires:	python3-modules
+Requires:	python3-requests >= 1.2.3
 
 %description -n python3-%{module}
 OAuth 1.0/a, OAuth 2.0, and Ofly library.
