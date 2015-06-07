@@ -56,11 +56,6 @@ Dokumentacja API %{module}.
 %prep
 %setup -q -n %{module}-%{version}
 
-# setup copy of source in py3 dir
-set -- *
-install -d py3
-cp -a "$@" py3
-
 %build
 %if %{with python2}
 %{__python} setup.py build --build-base build-2 %{?with_tests:test}
