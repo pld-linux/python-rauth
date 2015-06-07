@@ -10,19 +10,18 @@ Summary:	OAuth 1.0/a, OAuth 2.0, and Ofly library
 Name:		python-%{module}
 Version:	0.7.1
 Release:	1
-License:	- (enter GPL/GPL v2/GPL v3/LGPL/BSD/BSD-like/other license name here)
+License:	MIT
 Group:		Libraries/Python
 Source0:	https://github.com/litl/rauth/archive/%{version}.tar.gz
 # Source0-md5:	b7cb31e288ce24d0be788595e3685253
-URL:		https://github.com/litl/rauth/archive/0.7.1.tar.gz
+URL:		https://github.com/litl/rauth
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 %if %{with python2}
-BuildRequires:	python-devel
+BuildRequires:	python-modules
 BuildRequires:	python-setuptools >= 7.0
 %endif
 %if %{with python3}
-BuildRequires:	python3-devel
 BuildRequires:	python3-modules
 BuildRequires:	python3-setuptools >= 7.0
 %endif
@@ -62,14 +61,10 @@ cp -a "$@" py3
 
 %build
 %if %{with python2}
-CC="%{__cc}" \
-CFLAGS="%{rpmcppflags} %{rpmcflags}" \
 %{__python} setup.py build --build-base build-2 %{?with_tests:test}
 %endif
 
 %if %{with python3}
-CC="%{__cc}" \
-CFLAGS="%{rpmcppflags} %{rpmcflags}" \
 %{__python3} setup.py build --build-base build-3 %{?with_tests:test}
 %endif
 
@@ -81,7 +76,6 @@ rm -rf _build/html/_sources
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %if %{with python2}
 %{__python} setup.py \
 	build --build-base build-2 \
@@ -108,9 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS.md CHANGELOG README.md
 %{py_sitescriptdir}/%{module}
-%if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/%{module}-%{version}-py*.egg-info
-%endif
 %endif
 
 %if %{with python3}
