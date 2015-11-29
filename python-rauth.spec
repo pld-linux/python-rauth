@@ -16,7 +16,7 @@ Source0:	https://github.com/litl/rauth/archive/%{version}.tar.gz
 # Source0-md5:	b7cb31e288ce24d0be788595e3685253
 URL:		https://github.com/litl/rauth
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 %if %{with python2}
 BuildRequires:	python-modules
 BuildRequires:	python-setuptools >= 7.0
