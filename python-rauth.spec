@@ -1,12 +1,13 @@
 #
 # Conditional build:
-%bcond_with	doc		# don't build doc
-%bcond_with	tests	# do not perform "make test"
+%bcond_with	doc	# Sphinx documentation
+%bcond_with	tests	# unit tests
 %bcond_without	python2 # CPython 2.x module
 %bcond_without	python3 # CPython 3.x module
 
 %define 	module	rauth
 Summary:	OAuth 1.0/a, OAuth 2.0, and Ofly library
+Summary(pl.UTF-8):	Biblioteka OAuth 1.0/a, OAuth 2.0 oraz Ofly
 Name:		python-%{module}
 Version:	0.7.1
 Release:	7
@@ -33,8 +34,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 OAuth 1.0/a, OAuth 2.0, and Ofly library.
 
+%description -l pl.UTF-8
+Biblioteka OAuth 1.0/a, OAuth 2.0 oraz Ofly.
+
 %package -n python3-%{module}
 Summary:	OAuth 1.0/a, OAuth 2.0, and Ofly library
+Summary(pl.UTF-8):	Biblioteka OAuth 1.0/a, OAuth 2.0 oraz Ofly
 Group:		Libraries/Python
 Requires:	python3-modules
 Requires:	python3-requests >= 1.2.3
@@ -42,16 +47,19 @@ Requires:	python3-requests >= 1.2.3
 %description -n python3-%{module}
 OAuth 1.0/a, OAuth 2.0, and Ofly library.
 
+%description -n python3-%{module} -l pl.UTF-8
+Biblioteka OAuth 1.0/a, OAuth 2.0 oraz Ofly.
+
 %package apidocs
 Summary:	%{module} API documentation
-Summary(pl.UTF-8):	Dokumentacja API %{module}
+Summary(pl.UTF-8):	Dokumentacja API modułu Pythona %{module}
 Group:		Documentation
 
 %description apidocs
 API documentation for %{module}.
 
 %description apidocs -l pl.UTF-8
-Dokumentacja API %{module}.
+Dokumentacja API modułu Pythona %{module}.
 
 %prep
 %setup -q -n %{module}-%{version}
