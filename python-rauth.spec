@@ -16,14 +16,14 @@ Source0:	https://github.com/litl/rauth/archive/%{version}.tar.gz
 # Source0-md5:	b7cb31e288ce24d0be788595e3685253
 URL:		https://github.com/litl/rauth
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.710
+BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
 BuildRequires:	python-modules
-BuildRequires:	python-setuptools >= 7.0
+BuildRequires:	python-setuptools >= 1:7.0
 %endif
 %if %{with python3}
 BuildRequires:	python3-modules
-BuildRequires:	python3-setuptools >= 7.0
+BuildRequires:	python3-setuptools >= 1:7.0
 %endif
 Requires:	python-modules
 Requires:	python-requests >= 1.2.3
