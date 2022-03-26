@@ -10,7 +10,7 @@ Summary:	OAuth 1.0/a, OAuth 2.0, and Ofly library
 Summary(pl.UTF-8):	Biblioteka OAuth 1.0/a, OAuth 2.0 oraz Ofly
 Name:		python-%{module}
 Version:	0.7.1
-Release:	9
+Release:	10
 License:	MIT
 Group:		Libraries/Python
 Source0:	https://github.com/litl/rauth/archive/%{version}.tar.gz
